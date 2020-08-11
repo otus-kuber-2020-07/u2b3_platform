@@ -30,6 +30,7 @@ spec:
       containers:
         - image: flying1900/hipster-frontend:1.0.1
           name: frontend
+          resources: {}
           ports:
           - containerPort: 8080
           readinessProbe:
