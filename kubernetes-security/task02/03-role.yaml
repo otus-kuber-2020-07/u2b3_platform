@@ -12,8 +12,8 @@ kind: ClusterRoleBinding
 metadata:
   name: carol
 subjects:
-- kind: ServiceAccount
-  name: carol
+- kind: Group
+  name: system:serviceaccounts:prometheus
   namespace: prometheus
 roleRef:
   kind: ClusterRole
