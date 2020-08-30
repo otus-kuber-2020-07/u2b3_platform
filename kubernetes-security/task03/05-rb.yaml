@@ -1,7 +1,17 @@
 apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: view
+  namespace: dev
+rules:
+- apiGroups: ["*"]
+  resources: ["*"]
+  verbs: ["get"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: ken-view
+  name: ken-rb
   namespace: dev
 subjects:
 - kind: ServiceAccount
@@ -10,4 +20,3 @@ roleRef:
   kind: Role
   name: view
   apiGroup: rbac.authorization.k8s.io
-
